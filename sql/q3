@@ -1,0 +1,4 @@
+SELECT DATE_FORMAT(order_date, '%Y-%m') AS month,
+    SUM(order_total) AS total_revenue
+FROM orders_tbl
+GROUP BY DATE_FORMAT(order_date, '%Y-%m');

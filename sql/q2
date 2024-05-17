@@ -1,0 +1,7 @@
+SELECT e.name, e.salary, d.department_name
+FROM employee_tbl e
+INNER JOIN department_tbl d ON e.department_id = d.department_id
+WHERE e.salary = (
+  SELECT MAX(salary)
+  FROM employee_tbl e2
+  WHERE e2.department_id = e.department_id);

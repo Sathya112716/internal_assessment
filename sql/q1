@@ -1,0 +1,4 @@
+SELECT  COUNT(*) as duplicate_count
+FROM customers_sales
+GROUP BY customer_id,product_id,sale_date
+HAVING COUNT(*) > 1;
